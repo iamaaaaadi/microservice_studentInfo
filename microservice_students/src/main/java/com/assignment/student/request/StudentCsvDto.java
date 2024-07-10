@@ -8,11 +8,19 @@ public class StudentCsvDto {
 	String id;
 	@CsvBindByPosition(position = 1)
 	String name;
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
 	@CsvBindByPosition(position = 2)
 	String department;
-	@CsvBindByPosition(position = 2)
+	@CsvBindByPosition(position = 3)
 	String address;
-	@CsvBindByPosition(position = 2)
+	@CsvBindByPosition(position = 4)
 	String phoneNumber;
 
 
@@ -48,9 +56,5 @@ public class StudentCsvDto {
 		this.phoneNumber = phoneNumber;
 	}
 
-//	@Override
-//	public String toString() {
-//		return "StudentCsvDto [id=" + id + ", name=" + name + ", age=" + age + "]";
-//	}
 
 }

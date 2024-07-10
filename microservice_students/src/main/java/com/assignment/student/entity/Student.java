@@ -7,11 +7,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 @Entity
-//@Table(name = "student")
+
 public class Student implements Serializable {
 
 	/**
-	 * 
+	 * 			
 	 */
 	private static final long serialVersionUID = -2937456491265379660L;
 
