@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.assignment.student.entity.Student;
+import com.assignment.student.response.StudentPaginationResponse;
 import com.assignment.student.service.StudentService;
 import java.util.*;
 @RestController
@@ -36,9 +37,11 @@ public class StudentController {
     }
     
     @GetMapping
-    public ResponseEntity<List<Student>> fetchAllStudents() {
-        List<Student> students = studentService.fetchAllStudents();
-        return new ResponseEntity<>(students, HttpStatus.OK);
+    public ResponseEntity<StudentPaginationResponse> getAllStudents(
+            @RequestParam(name = "pageNumber", defaultValue = "0") Integer pageNumber,
+            @RequestParam(name = "pageSize", defaultValue = "10") Integer pageSize) {
+    	StudentPaginationResponse response = studentService.fetchAllStudents(pageNumber, pageSize);
+        return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 	
 }

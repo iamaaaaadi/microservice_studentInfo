@@ -6,9 +6,10 @@ import java.io.IOException;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.assignment.student.entity.Student;
+import com.assignment.student.response.StudentPaginationResponse;
 
 
 public interface StudentService {
 	String saveStudents(MultipartFile file) throws FileNotFoundException, IOException;
-	List<Student> fetchAllStudents(); 
+	StudentPaginationResponse fetchAllStudents(int pageNumber, int pageSize); 
 }
